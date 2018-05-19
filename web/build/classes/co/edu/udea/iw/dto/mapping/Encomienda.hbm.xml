@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Encomienda" table="encomienda">
+        <id name="idEncomienda" type="java.lang.Integer">
+            <column name="id_encomienda" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="municipioByCiudadDestino" class="co.edu.udea.iw.dto.Municipio" fetch="join">
+            <column name="ciudad_destino" />
+        </many-to-one>
+        <many-to-one name="municipioByCiudadOrigen" class="co.edu.udea.iw.dto.Municipio" fetch="join">
+            <column name="ciudad_origen" />
+        </many-to-one>
+        <many-to-one name="tercerosByTerceroDestinatario" class="co.edu.udea.iw.dto.Terceros" fetch="join">
+            <column name="tercero_destinatario" />
+        </many-to-one>
+        <many-to-one name="tercerosByTerceroRemitente" class="co.edu.udea.iw.dto.Terceros" fetch="join">
+            <column name="tercero_remitente" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="512" />
+        </property>
+        <property name="alto" type="java.lang.Double">
+            <column name="alto" precision="10" scale="2" />
+        </property>
+        <property name="ancho" type="java.lang.Double">
+            <column name="ancho" precision="10" scale="2"/>
+        </property>
+        <property name="profundidad" type="java.lang.Double">
+            <column name="profundidad" precision="10" scale="2"/>
+        </property>
+        <property name="peso" type="java.lang.Double">
+            <column name="peso" precision="10" scale="2"/>
+        </property>
+        <property name="cobroNeto" type="java.lang.Long">
+            <column name="cobro_neto" precision="10" />
+        </property>
+        <property name="valorSeguro" type="java.lang.Long">
+            <column name="valor_seguro" precision="10" />
+        </property>
+        <property name="valorComercial" type="java.lang.Long">
+            <column name="valor_comercial" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

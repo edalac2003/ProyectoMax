@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Departamento" table="departamento">
+        <id name="idDepartamento" type="java.lang.Integer">
+            <column name="id_departamento" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pais" class="co.edu.udea.iw.dto.Pais" fetch="join">
+            <column name="pais" />
+        </many-to-one>
+        
+        <property name="nombre" type="string">
+            <column name="nombre" length="254" />
+        </property>
+        
+<!--         <set name="municipios" table="municipio" inverse="true" lazy="true" fetch="select"> -->
+<!--             <key> -->
+<!--                 <column name="departamento" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="Municipio" /> -->
+<!--         </set> -->
+    </class>
+</hibernate-mapping>

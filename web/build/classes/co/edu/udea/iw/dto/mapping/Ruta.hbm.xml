@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Ruta" table="ruta">
+        <id name="idRuta" type="java.lang.Integer">
+            <column name="id_ruta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="municipioByCiudadDestino" class="co.edu.udea.iw.dto.Municipio" fetch="select">
+            <column name="ciudad_destino" />
+        </many-to-one>
+        <many-to-one name="municipioByCiudadOrigen" class="co.edu.udea.iw.dto.Municipio" fetch="select">
+            <column name="ciudad_origen" />
+        </many-to-one>
+        <many-to-one name="terceros" class="co.edu.udea.iw.dto.Terceros" fetch="select">
+            <column name="conductor" />
+        </many-to-one>
+        <many-to-one name="vehiculo" class="co.edu.udea.iw.dto.Vehiculo" fetch="select">
+            <column name="vehiculo" />
+        </many-to-one>
+        <property name="fechaSalida" type="date">
+            <column name="fecha_salida" length="10" />
+        </property>
+        <property name="fechaRegreso" type="date">
+            <column name="fecha_regreso" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

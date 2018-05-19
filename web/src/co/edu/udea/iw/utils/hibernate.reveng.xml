@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-name="departamento"/>
+  <table-filter match-name="encomienda"/>
+  <table-filter match-name="envios"/>
+  <table-filter match-name="estado_envio"/>
+  <table-filter match-name="municipio"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="rol"/>
+  <table-filter match-name="ruta"/>
+  <table-filter match-name="terceros"/>
+  <table-filter match-name="tipo_cargo"/>
+  <table-filter match-name="tipo_documento"/>
+  <table-filter match-name="tipo_vinculo"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="usuarios_roles"/>
+  <table-filter match-name="vehiculo"/>
+</hibernate-reverse-engineering>

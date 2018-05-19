@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Usuario" table="usuario">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="terceros" class="co.edu.udea.iw.dto.Terceros" fetch="select">
+            <column name="id_tercero" />
+        </many-to-one>
+        <property name="login" type="string">
+            <column name="login" length="128" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="512" />
+        </property>
+        <property name="estado" type="java.lang.Integer">
+            <column name="estado" />
+        </property>
+    </class>
+</hibernate-mapping>

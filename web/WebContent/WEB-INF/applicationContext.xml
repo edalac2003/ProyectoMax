@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://localhost:3306/aero" />
+			<property name="username" value="root" />
+			<property name="password" value="root" />
+		</bean>
+        
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="mappingResources">
+				<list>
+					<value>co/edu/udea/iw/dto/mapping/Departamento.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Encomienda.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Envios.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/EstadoEnvio.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Municipio.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Pais.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Rol.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Ruta.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Terceros.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/TipoCargo.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/TipoDocumento.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/TipoVinculo.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Usuario.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/UsuariosRoles.hbm.xml</value>
+					<value>co/edu/udea/iw/dto/mapping/Vehiculo.hbm.xml</value>
+				</list>
+			</property>
+            
+            <property name="hibernateProperties">
+                 <props>
+                      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                      <prop key="hibernate.show_sql">false</prop>
+                      <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+                 </props>
+            </property>      
+        </bean>
+</beans>

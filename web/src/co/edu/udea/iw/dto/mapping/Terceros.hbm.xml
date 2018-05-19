@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Terceros" table="terceros">
+        <id name="idTercero" type="java.lang.Integer">
+            <column name="id_tercero" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="municipio" class="co.edu.udea.iw.dto.Municipio" fetch="select">
+            <column name="municipio" />
+        </many-to-one>
+        <many-to-one name="tipoCargo" class="co.edu.udea.iw.dto.TipoCargo" fetch="select">
+            <column name="tipo_cargo" />
+        </many-to-one>
+        <many-to-one name="tipoDocumento" class="co.edu.udea.iw.dto.TipoDocumento" fetch="select">
+            <column name="tipo_documento" />
+        </many-to-one>
+        <many-to-one name="tipoVinculo" class="co.edu.udea.iw.dto.TipoVinculo" fetch="select">
+            <column name="tipo_vinculo" />
+        </many-to-one>
+        <property name="nombres" type="string">
+            <column name="nombres" length="254" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="254" />
+        </property>
+        <property name="numeroDocumento" type="java.lang.Long">
+            <column name="numero_documento" precision="12" scale="0" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="254" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="fecha_nacimiento" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
