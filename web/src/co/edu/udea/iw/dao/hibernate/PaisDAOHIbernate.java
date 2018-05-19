@@ -55,7 +55,7 @@ public class PaisDAOHIbernate extends HibernateDaoSupport implements PaisDAO {
 	}
 
 	@Override
-	public Pais obtenerPorID(Long id) throws ExcepcionesDAO {
+	public Pais obtenerPorID(Integer id) throws ExcepcionesDAO {
 		try {
 			session = getSession();
 			criteria = session.createCriteria(Pais.class).add(Restrictions.idEq(id));			

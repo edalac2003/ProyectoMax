@@ -46,4 +46,52 @@
                  </props>
             </property>      
         </bean>
+        
+        <!-- Se declaran los Beans para los DAO's -->
+        <bean id="departamentoDao" class="co.edu.udea.iw.dao.hibernate.DepartamentoDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="encomiendaDao" class="co.edu.udea.iw.dao.hibernate.EncomiendaDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="EnviosDao" class="co.edu.udea.iw.dao.hibernate.EnviosDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="estadoEnvioDao" class="co.edu.udea.iw.dao.hibernate.EstadoEnvioHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="municipioDao" class="co.edu.udea.iw.dao.hibernate.MunicipioDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="paisDao" class="co.edu.udea.iw.dao.hibernate.PaisDAOHIbernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="terceroDao" class="co.edu.udea.iw.dao.hibernate.TerceroDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <bean id="vehiculoDao" class="co.edu.udea.iw.dao.hibernate.VehiculoDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        
+        <!-- Beans para el Negocio -->
+        <bean id="departamentoNgc" class="co.edu.udea.iw.ngc.impl.DepartamentoNGCImpl">
+        	<property name="departamentoDao" ref="departamentoDao" />
+        </bean>
+        
+        <bean id="municipioNgc" class="co.edu.udea.iw.ngc.impl.MunicipioNGCImpl">
+        	<property name="departamentoDao" ref="departamentoDao" />
+        	<property name="municipioDao" ref="municipioDao" />
+        </bean>
+        
+        <bean id="tercerosNgc" class="co.edu.udea.iw.ngc.impl.TerceroNGCImpl">
+        	<property name="tercerosDao" ref="terceroDao" />
+        	<property name="municipioDao" ref="municipioDao" />
+        </bean>
 </beans>

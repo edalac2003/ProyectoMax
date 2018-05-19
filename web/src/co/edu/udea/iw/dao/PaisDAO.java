@@ -11,7 +11,7 @@ public interface PaisDAO {
 	
 	public void actualizar(Pais pais) throws ExcepcionesDAO;
 	
-	public Pais obtenerPorID(Long id) throws ExcepcionesDAO;
+	public Pais obtenerPorID(Integer id) throws ExcepcionesDAO;
 	
 	public List<Pais> listarTodos() throws ExcepcionesDAO;
 }

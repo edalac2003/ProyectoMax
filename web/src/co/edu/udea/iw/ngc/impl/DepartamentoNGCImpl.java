@@ -27,6 +27,7 @@ public class DepartamentoNGCImpl implements DepartamentoNGC {
 					expNgc = new ExcepcionesNGC(e);
 					expNgc.setMsgTecnico(e.getMsgTecnico());
 					expNgc.setMsgUsuario(e.getMsgUsuario());
+					throw expNgc;
 				}
 			}else {
 				expNgc = new ExcepcionesNGC("El departamento debe tener un pais asignado.");
@@ -53,6 +54,7 @@ public class DepartamentoNGCImpl implements DepartamentoNGC {
 					expNgc = new ExcepcionesNGC(e);
 					expNgc.setMsgTecnico(e.getMsgTecnico());
 					expNgc.setMsgUsuario(e.getMsgUsuario());
+					throw expNgc;
 				}
 			}else {
 				expNgc = new ExcepcionesNGC("El departamento debe tener un pais asignado.");
@@ -74,6 +76,7 @@ public class DepartamentoNGCImpl implements DepartamentoNGC {
 				expNgc = new ExcepcionesNGC(e);
 				expNgc.setMsgTecnico(e.getMsgTecnico());
 				expNgc.setMsgUsuario(e.getMsgUsuario());
+				throw expNgc;
 			}
 		}else {
 			expNgc = new ExcepcionesNGC("Debe ingresar un id válido.");
@@ -92,6 +95,7 @@ public class DepartamentoNGCImpl implements DepartamentoNGC {
 			expNgc = new ExcepcionesNGC(e);
 			expNgc.setMsgTecnico(e.getMsgTecnico());
 			expNgc.setMsgUsuario(e.getMsgUsuario());
+			throw expNgc;
 		}
 		return lista;
 	}

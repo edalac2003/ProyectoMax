@@ -13,6 +13,8 @@ public interface VehiculoDAO {
 	
 	public Vehiculo obtenerPorID(Long id) throws ExcepcionesDAO;
 	
+	public Vehiculo obtenerPorPlaca(String placa) throws ExcepcionesDAO;
+	
 	public List<Vehiculo> listarTodos() throws ExcepcionesDAO;
 	
 }
